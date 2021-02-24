@@ -37,15 +37,10 @@ const rl = readline.createInterface({
 });
 
 const getInput = () => {
-rl.question(`${board}\n${currentPlayer} to move (enter move in form of a number): `, (answer) => {
-  currentBoard = currentBoard.replaceAt
-  console.log(player);
-  if (!rowWin(0, player)) {
-    getInput();
-  } else {
-    console.log(`${player} WINS`);
-  }
-  //console.log(board);
+rl.question(`${currentBoard}\n${currentPlayer} to move (enter move in form of a number): `, (answer) => {
+  let loc = coordinates[answer];
+  currentBoard = currentBoard.replaceAt(loc, currentPlayer);
+  console.log(currentBoard);
 });
 }
 
