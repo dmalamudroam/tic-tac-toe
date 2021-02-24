@@ -1,3 +1,5 @@
+const readline = require("readline");
+
 const startBoard = `
 |---|---|---|
 | 1 | 2 | 3 |
@@ -7,6 +9,8 @@ const startBoard = `
 | 7 | 8 | 9 |
 |---|---|---|
              `;
+
+let currentBoard = startBoard;
 
 const coordinates = {
   '1': 17,
@@ -20,19 +24,32 @@ const coordinates = {
   '9': 81
 };
 
+let state = [[0, 0, 0],[0, 0, 0],[0, 0, 0]];
+let currentPlayer = 'x';
+
 String.prototype.replaceAt = function(index, replacement) {
   return this.substr(0, index) + replacement + this.substr(index + replacement.length);
 }
 
-console.log(startBoard.indexOf('1'));
-console.log(startBoard.indexOf('2'));
-console.log(startBoard.indexOf('3'));
-console.log(startBoard.indexOf('4'));
-console.log(startBoard.indexOf('5'));
-console.log(startBoard.indexOf('6'));
-console.log(startBoard.indexOf('7'));
-console.log(startBoard.indexOf('8'));
-console.log(startBoard.indexOf('9'));
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+const getInput = () => {
+rl.question(`${board}\n${currentPlayer} to move (enter move in form of a number): `, (answer) => {
+  currentBoard = currentBoard.replaceAt
+  console.log(player);
+  if (!rowWin(0, player)) {
+    getInput();
+  } else {
+    console.log(`${player} WINS`);
+  }
+  //console.log(board);
+});
+}
+
+getInput();
 
 
 
