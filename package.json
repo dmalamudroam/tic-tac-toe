@@ -1,0 +1,20 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "description": "A command line tic-tac-toe game",
+  "main": "game.js",
+  "scripts": {
+    "start": "node game.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmalamudroam/tic-tac-toe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmalamudroam/tic-tac-toe/issues"
+  },
+  "homepage": "https://github.com/dmalamudroam/tic-tac-toe#readme"
+}
