@@ -45,24 +45,28 @@ const updateState = (stringNum) => {
 }
 
 const getInput = () => {
+  console.clear();
   rl.question(`${currentBoard}\n${currentPlayer} to move (enter move in form of a number): `, (answer) => {
     let loc = coordinates[answer];
     currentBoard = currentBoard.replaceAt(loc, currentPlayer);
-    console.log(currentBoard);
+    //console.log(currentBoard);
     updateState(answer);
     const isWin = checkWin(currentPlayer);
     if (isWin) {
-      console.log(`${currentPlayer} WINS!!!`);
-      console.log('NEW GAME!')
+      console.clear();
+      console.log(currentBoard);
+      console.log(`\n${currentPlayer} WINS!!!\n`);
+      console.log('NEW GAME? (y/n)')
       currentBoard = startBoard;
       currentPlayer = 'o';
-    }
-    if (currentPlayer === 'x') {
-      currentPlayer = 'o';
     } else {
-      currentPlayer = 'x';
+      if (currentPlayer === 'x') {
+        currentPlayer = 'o';
+      } else {
+        currentPlayer = 'x';
+      }
+      getInput();
     }
-    getInput();
   });
 }
 
